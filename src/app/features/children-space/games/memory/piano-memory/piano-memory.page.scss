@@ -1,0 +1,135 @@
+@import '/src/theme/variables.scss';
+
+ion-content {
+    --background: $color-red-light ;
+    background-color: $color-red-light;
+}
+
+.container-game {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+
+    h1 {
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        .icon{
+            padding-left : 10px;
+            font-size: 25px;
+        }
+    }
+
+    .container-piano {
+        display: flex;
+        justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 100%;
+        .keys {
+            width: 100%;
+            border : solid 0.5px black;
+            display : flex;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+            padding-bottom: 15px;
+
+            .round {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: rgba(0, 0, 0, 0.4);
+                color : white;
+            }
+        }
+    }
+    
+    .data {
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: white;
+            border : solid 0.5px black;
+            border-radius: 50%;
+        }
+        
+    }
+
+    .color-red {
+        background-color: red;
+    }
+    .color-orange {
+        background-color: orange;
+    }
+    .color-yellow {
+        background-color: yellow;
+    }
+    .color-green {
+        background-color: green;
+    }
+    .color-cyan {
+        background-color: cyan;
+    }
+    .color-blue {
+        background-color: blue;
+    }
+    .color-purple {
+        background-color: purple;
+    }
+    .color-pink {
+        background-color: $color-pink;
+    }
+}
+
+.icon-retour {
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+@media screen and (min-width: 800px)
+{
+    .icon-retour {
+        font-size: 35px;
+    }
+
+    .container-game {
+        h1 {
+            font-size: 3em;
+            .icon{
+                font-size: 60px !important;
+            }
+        }
+        .data {
+            p {
+                width: 150px;
+                height: 150px;
+                font-size: 2em;
+            }
+            
+        }
+        .container-piano {
+            .keys {
+                .round {
+                    width: 100px;
+                    height: 100px;
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                    p {
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+

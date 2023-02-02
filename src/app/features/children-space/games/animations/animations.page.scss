@@ -1,0 +1,56 @@
+@import '/src/theme/variables.scss';
+
+ion-content {
+    --background: $color-primary ;
+    background-color: $color-primary;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    .container-game {
+        background-color: $color-primary-light;
+        --background: $color-primary-light;
+        width: 85%;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        .animations {
+            width: 23%;
+            height: 47%;
+            border: solid 1px black;
+            margin: 5px;
+        }
+        .red {
+            background-color: $color-red;
+        }
+        .blue {
+            background-color: $color-blue;
+        }
+        .purple {
+            background-color: $color-primary;
+        }
+        .orange {
+            background-color: $color-orange;
+        }
+        .green {
+            background-color: $color-green;
+        }
+        .pink {
+            background-color: $color-pink;
+        }
+    }
+}
+.icon-retour {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+@media screen and (min-width: 800px)
+{
+    .icon-retour {
+        font-size: 35px;
+    }
+}

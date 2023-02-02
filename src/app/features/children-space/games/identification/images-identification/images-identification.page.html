@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <ion-img class="image-character" *ngIf="imageCharacter" [src]="imageCharacter"></ion-img>
+  <ion-back-button color="dark" class="icon-retour" text="Retour" defaultHref="/home"></ion-back-button>
+  <div class="container-flex">
+    <ion-card class="container-game">
+      <h1 class="ion-text-center">
+        Appuie sur la bonne image !
+        <ion-icon (click)="textToSpeech()" class="icon" name="volume-high-outline"></ion-icon>
+      </h1>
+      <div class="data">
+        <div>
+          <h2 class="ion-text-center" *ngIf="game.data[level].order">
+            {{game.data[level].order}}
+            <ion-icon (click)="textToSpeech(game.data[level].order)" class="icon" name="volume-high-outline"></ion-icon>
+          </h2>
+        </div>
+        <div class="container-images">
+          <ion-img (click)="validated(game.data[level].words[i])" class="images" *ngFor="let image of game.data[level].images, let i=index" [src]="image"></ion-img>
+        </div>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

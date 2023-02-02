@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Catégorie pictogramme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar spellcheck="true" placeholder="Rechercher..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  <p class="ion-text-center" *ngIf="child">
+    Catégorie des pictogrammes de {{child.firstname}}
+  </p>
+  <ion-list>
+    <ion-item class="ion-padding-bottom" *ngFor="let category of categoryPictograms | filter:filterTerm">
+      <ion-img class="image" slot="start" [src]="category.image.image_path">
+      </ion-img>
+      <ion-label>
+        <h2>{{category.name}}
+          <div class="container-button">
+            <ion-button class="button" color="success" fill="solid">
+              <ion-icon slot="icon-only" name="pencil-outline"> </ion-icon>
+            </ion-button>
+            <ion-button (click)="showConfirm(category)" class="button" color="danger" fill="solid">
+              <ion-icon name="trash-outline"> </ion-icon>
+            </ion-button>
+          </div>
+        </h2>
+        <br />
+        <ion-button [routerLink]="[category.id, 'pictograms']" expand="full" color="primary" fill="solid" shape="round">
+          Voir
+          <ion-icon size="default" slot="end" name="eye-outline"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- fab placed to the bottom start -->
+  <ion-fab (click)="scrollToTop()" class="button-scroll" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-up-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-button [routerLink]="['add-category-pictogram']" class="button-add" color="primary" expand="full" shape="round">
+    Ajouter une catégorie
+  </ion-button>
+</ion-content>

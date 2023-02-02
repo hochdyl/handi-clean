@@ -1,0 +1,95 @@
+@import '/src/theme/variables.scss';
+
+ion-content {
+    --background: $color-primary-background ;
+    background-color: $color-primary-background;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: auto;
+
+    .container-pictograms {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin-top: 20px;
+        justify-content: space-between;
+        .image-pictogram {
+            width: 110px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .container-category-pictograms {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        border-top: solid black 1px;
+        justify-content: space-between;
+
+        .image-category-pictogram {
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.icon-retour {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index : 100;
+}
+
+.card {
+    flex: 0 0 auto;
+    margin: 10px;
+    margin-right: 25px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    .title {
+        padding-bottom: 5px; 
+    }
+  }
+
+  @media screen and (min-width: 800px)
+{
+    .icon-retour {
+        font-size: 30px;
+    }
+
+    .container-flex {
+        .container-pictograms {
+            margin-top: 40px;
+            .image-pictogram {
+                width: 300px;
+            }
+        }
+    
+        .container-category-pictograms {
+            .image-category-pictogram {
+                width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    
+    .card {
+        margin: 10px;
+        margin-right: 25px;
+        .title {
+            padding-bottom: 5px; 
+            font-size: 2.5em;
+            padding-top: 5px;
+        }
+      }
+}
+

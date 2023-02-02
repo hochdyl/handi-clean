@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true" scroll="false" class="ion-padding">
+    <div class="container-flex">
+        <ion-card color="primary" class="container-current-character">
+            <ion-img class="character" [src]="imageCharacter"></ion-img>
+            <h2 class="ion-text-center">Ton personnage</h2>
+        </ion-card>
+        <ion-card class="container-characters">
+            <div class="container-character" *ngFor="let character of characters">
+                <ion-img (click)="chooseCharacter(character.id)" class="other-characters" [src]="character.image.image_path"></ion-img>
+            </div>
+        </ion-card>
+    </div>
+    <div class="container-button">
+        <ion-icon (click)="valide()" class="icon" color="primary" name="checkmark-circle"></ion-icon>
+    </div>
+</ion-content>

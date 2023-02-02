@@ -1,0 +1,7 @@
+{
+  "name": "handi-clean",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

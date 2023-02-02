@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <ion-img class="image-character" *ngIf="imageCharacter" [src]="imageCharacter"></ion-img>
+  <ion-back-button color="dark" class="icon-retour" text="Retour" defaultHref="/home"></ion-back-button>
+  <div class="container-flex">
+    <ion-card class="container-game">
+      <h1 class="ion-text-center">
+        Complète le mot !
+        <ion-icon (click)="textToSpeech()" class="icon" name="volume-high-outline"></ion-icon>
+      </h1>
+      <div class="data">
+        <div>
+          <ion-img class="image-game" [src]="game.data[level].image"></ion-img>
+          <h2 class="ion-text-center" *ngIf="game.data[level].word">
+            <div *ngIf="!showCorrection">
+              <span *ngFor="let letter of game.data[level].word.split('')">
+                <span class="missing-letter" *ngIf="letter === game.data[level].missing_letter">
+                  _
+                </span>
+                <span class="letter-word" *ngIf="letter !== game.data[level].missing_letter">
+                  {{letter | uppercase}}
+                </span>
+              </span>
+            </div>
+            <div *ngIf="showCorrection">
+                <span class="letter-word">
+                  {{game.data[level].word | uppercase}}
+                </span>
+            </div>
+            <ion-icon (click)="textToSpeech(game.data[level].word)" class="icon" name="volume-high-outline"></ion-icon>
+          </h2>
+        </div>
+        <div class="container-letters">
+          <div (click)="validated(letter)" class="letter" *ngFor="let letter of game.data[level].letters">
+            {{letter | uppercase}}
+          </div>
+        </div>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

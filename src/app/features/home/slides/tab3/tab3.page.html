@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <ion-img class="image-home-slide" [src]="explications"></ion-img>
+
+  <div class="container-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center" color="primary">Comment ça fonctionne ?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Une fois incrit, vous pourrez créer le compte de votre/vos enfant(s).
+        <br />
+        Il vous sera demandé de répondre à des questions sur ses capacités pour que l'application choississe les jeux
+        adaptés rien que pour lui !
+        <br />
+        A tout moment vous pourrez gérer les pictogrammes de votre enfant pour qu'il soit 100% adapté à ses besoins !
+      </ion-card-content>
+    </ion-card>
+    <div class="container-icon">
+      <ion-icon color="primary" [routerLink]="['/tab2']" slot='end' name="chevron-back-outline" size="large">
+      </ion-icon>
+      <ion-icon color="primary" [routerLink]="['/tab4']" slot='end' name="chevron-forward-outline" size="large">
+      </ion-icon>
+    </div>
+  </div>
+
+</ion-content>

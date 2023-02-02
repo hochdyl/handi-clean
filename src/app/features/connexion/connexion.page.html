@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Retour" defaultHref="/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img class="image-home-slide" [src]="logo"></ion-img>
+
+  <div class="container-center">
+    <h2 class="ion-text-center">Veuillez rentrer vos informations</h2>
+    <form [formGroup]="ionicForm">
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input required type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.email.valid && ionicForm.controls.email.dirty">
+          <p class="ion-padding-start">Rentrer un email correct.</p>
+        </ion-note>
+
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Mot de passe</ion-label>
+          <ion-input required type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.password.valid && isFormSubmitted">
+          <p class="ion-padding-start">Rentrer votre mot de passe.</p>
+        </ion-note>
+      </ion-list>
+      <br />
+    </form>
+    <ion-button [disabled]="ionicForm.invalid" (click)="login()" expand="block">Se connecter</ion-button>
+  </div>
+</ion-content>

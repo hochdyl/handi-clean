@@ -1,0 +1,107 @@
+@import '/src/theme/variables.scss';
+
+ion-content {
+    background-image: url("/assets/child-zone/fond-paysage.jpg") 0 0/100% 100% no-repeat;
+    --background: url("/assets/child-zone/fond-paysage.jpg") 0 0/100% 100% no-repeat;
+}
+
+.container-flex {
+    display:flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.container-character{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .image-character {
+        width: 100px;
+    }
+}
+      
+.container-games{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 60%;
+    margin-right: 20px;
+    .games {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+    }
+    .game {
+        width: 23%;
+        height: 30%;
+        margin: 5px;
+        text-align : center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .memory {
+        background-color: $color-red;
+        color:white;
+    }
+    .identification {
+        background-color: $color-orange;
+        color:white;
+    }
+    .school {
+        background-color: $color-green-light;
+        color:white;
+    }
+    .free {
+        background-color:$color-primary;
+        color:white;
+    }
+    
+}
+
+.container-pictograms{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    .pictogram {
+        width: 80px;
+        height: 80px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-pink-light;
+        color : black;
+        margin-right : 5px;
+    }
+}
+
+.icon {
+    font-size: 30px;
+}
+@media screen and (min-width: 800px)
+{
+    .icon {
+        font-size: 60px;
+    }
+    .container-character{
+        .image-character {
+            width: 150px;
+        }
+    }
+    .container-games{
+        .game {
+            width: 30%;
+            height: 30%;
+        }
+    }
+
+    .container-pictograms{
+        .pictogram {
+            width: 180px;
+            height: 180px;
+        }
+    }
+}

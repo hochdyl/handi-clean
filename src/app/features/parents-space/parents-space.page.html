@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Espace parents</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p class="ion-text-center">
+  Votre espace est sécurisé, vous pouvez gérer vos informations personnelle
+  et celles de votre/vos enfant(s)
+</p>
+
+<ion-toolbar color="primary">
+  <ion-title>Gérer les enfants</ion-title>
+</ion-toolbar>
+
+<div class="container-flex">
+  <div (click)="openPicker('/update-child')" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="person-outline"></ion-icon>
+    </ion-card>
+    <p> Modifier </p>
+  </div>
+  <div (click)="openPicker('/statistics-game')" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="bar-chart-outline"></ion-icon>
+    </ion-card>
+    <p> Statistiques </p>
+  </div>
+
+  <div (click)="openPicker('/category-pictograms')" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="chatbubbles-outline"></ion-icon>
+    </ion-card>
+    <p> Pictogrammes </p>
+  </div>
+
+  <div (click)="openPicker('/drawings')" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="brush-outline"></ion-icon>
+    </ion-card>
+    <p> Dessins </p>
+  </div>
+
+  <div [routerLink]="['/child-registration']" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="person-add-outline"></ion-icon>
+    </ion-card>
+    <p> Ajouter </p>
+  </div>
+
+  <div (click)="openPicker('delete-child')" class="container-info">
+    <ion-card color="danger">
+      <ion-icon class="icon" name="trash-outline"></ion-icon>
+    </ion-card>
+    <p> Supprimer </p>
+  </div>
+</div>
+
+<br />
+
+<ion-toolbar color="primary">
+  <ion-title>Gérer mes informations</ion-title>
+</ion-toolbar>
+
+<div class="container-flex">
+  <div [routerLink]="['update-parent']" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="person-outline"></ion-icon>
+    </ion-card>
+    <p> Modifier mes infos </p>
+  </div>
+  <div [routerLink]="['update-password']" class="container-info">
+    <ion-card color="primary">
+      <ion-icon class="icon" name="lock-closed-outline"></ion-icon>
+    </ion-card>
+    <p> Mot de passe </p>
+  </div>
+
+  <div (click)="deleteUser()" class="container-info">
+    <ion-card color="danger">
+      <ion-icon class="icon" name="trash-outline"></ion-icon>
+    </ion-card>
+    <p> Supprimer mon compte </p>
+  </div>
+</div>
+
+<br />
+
+<ion-button color="primary" (click)="logout()" expand="full" shape="round">
+  Se déconnecter
+</ion-button>
+
+</ion-content>

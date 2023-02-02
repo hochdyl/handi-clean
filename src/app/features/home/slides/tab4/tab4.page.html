@@ -1,0 +1,19 @@
+<ion-content>
+
+  <ion-img class="image-home-slide" [src]="imgConnexion"></ion-img>
+
+  <div class="container-center">
+    <h1 class="ion-text-center">Prêt ?</h1>
+    <ion-button [routerLink]="['/registration']" expand="block" shape="round">
+      S'inscrire
+    </ion-button>
+    <br/>
+    <ion-button [routerLink]="['/connexion']" expand="block" shape="round">
+      Se connecter
+    </ion-button>
+  </div>
+  <div class="container-icon">
+    <ion-icon color="primary" [routerLink]="['/tab3']" slot='end' name="chevron-back-outline" size="large">
+    </ion-icon>
+  </div>
+</ion-content>

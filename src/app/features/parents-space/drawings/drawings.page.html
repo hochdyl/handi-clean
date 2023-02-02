@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Dessins</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="ion-text-center" *ngIf="child">
+    Dessin de {{child.firstname}}
+  </p>
+  <div>
+    <ion-card class="ion-padding-bottom" *ngFor="let drawing of drawings">
+      <ion-button (click)="showConfirm(drawing)" class="button-delete" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"> </ion-icon>
+      </ion-button>
+      <ion-img class="drawing" [src]="drawing.image.image_path">
+      </ion-img>
+    </ion-card>
+  </div>
+  <!-- fab placed to the bottom start -->
+  <ion-fab (click)="scrollToTop()" class="button-scroll" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-up-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

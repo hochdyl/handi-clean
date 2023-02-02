@@ -1,0 +1,128 @@
+@import "/src/theme/variables.scss";
+
+ion-content {
+    --background: $color-green;
+    background-color: $color-green;
+}
+.container-flex {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-left: 70px;
+    .container-game {
+        background-color: $color-green-light;
+        --background: $color-green-light;
+        width: 85%;
+        h1, h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            .icon {
+                padding-left: 10px;
+                font-size: 25px;
+            }
+        }
+        .data {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 80%;
+            .image-game {
+                width: 20%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h2 {
+                font-weight: bold;
+                font-size: 2em;
+                margin-top: 0;
+                margin-left : 25px;
+                .letter-word {
+                    color: black;
+                }
+
+                .missing-letter {
+                    color: white;
+                }
+            }
+
+            .container-letters {
+                display: flex;
+                justify-content: space-around;
+                padding-bottom: 5px;
+                .letter {
+                    background-color: $color-green;
+                    border: solid 2px black;
+                    color: white;
+                    width: 75px;
+                    height: 75px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: bold;
+                    font-size: 2em;
+                    border-radius: 20%;
+                }
+            }
+        }
+    }
+}
+
+.icon-retour {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.image-character {
+    width: 100px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+@media screen and (min-width: 800px)
+{
+    .icon-retour {
+        font-size: 30px;
+    }
+    .image-character {
+        width: 150px;
+    }
+
+    .container-flex {
+        .container-game {
+            width: 85%;
+            h1, h2 {
+                font-size: 3em;
+                .icon {
+                    font-size: 65px;
+                }
+            }
+            .data {
+                height: 80%;
+                .image-game {
+                    width: 40%;
+                }
+                h2 {
+                    font-weight: bold;
+                    font-size: 4em;
+
+                    .icon {
+                        font-size: 64px;
+                    }
+                }
+
+                .container-letters {
+                    .letter {
+                        width: 120px;
+                        height: 120px;
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+    }
+
+}

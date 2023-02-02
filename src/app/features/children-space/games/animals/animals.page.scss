@@ -1,0 +1,70 @@
+@import '/src/theme/variables.scss';
+
+ion-content {
+    --background: $color-orange ;
+    background-color: $color-orange;
+}
+
+.container-flex {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    .container-game {
+        background-color: $color-orange-light;
+        display: flex;
+        .container-current-animal {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2 {
+                margin-top : 0px;
+                margin-right : 5px;
+                font-weight: bold;
+                color:black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .icon {
+                    padding-left: 10px;
+                }
+            }
+            .current-animal{
+                width: 100%;
+            }
+        }
+        .container-animals {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 75%;
+            .animal {
+                width: 25%;
+            }
+        }
+    }
+}
+.icon-retour {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+@media screen and (min-width: 800px)
+{
+    .icon-retour {
+        font-size: 65px;
+    }
+
+    .container-flex {
+        .container-game {
+            .container-animals {
+                .animal {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}

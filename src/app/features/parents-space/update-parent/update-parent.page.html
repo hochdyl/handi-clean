@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Informations personnelles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container-center">
+    <h2 class="ion-text-center ion-padding-top">Modifier vos informations personnelles</h2>
+    <form [formGroup]="ionicForm">
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input required type="text" formControlName="firstname"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.firstname.valid && ionicForm.controls.firstname.dirty">
+          <p class="ion-padding-start">Rentrer un prénom.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input required type="text" formControlName="lastname"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.lastname.valid && ionicForm.controls.lastname.dirty">
+          <p class="ion-padding-start">Rentrer un nom.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Numéro de téléphone</ion-label>
+          <ion-input required type="tel" pattern="[0-9]{10}" formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-note color="primary">
+          <p class="ion-padding-start">Format: 0606060606.</p>
+        </ion-note>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.phone.valid && ionicForm.controls.phone.dirty">
+          <p class="ion-padding-start">Rentrer un téléphone correct "0606060606".</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Adresse</ion-label>
+          <ion-input required type="text" formControlName="address"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.address.valid && ionicForm.controls.address.dirty">
+          <p class="ion-padding-start">Rentrer une adresse correct.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Code postal</ion-label>
+          <ion-input required pattern="[0-9]{5}" type="tel" formControlName="postal_code"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.postal_code.valid && ionicForm.controls.postal_code.dirty">
+          <p class="ion-padding-start">Rentrer une code postal correct.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Ville</ion-label>
+          <ion-input required type="text" formControlName="city"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.city.valid && ionicForm.controls.city.dirty">
+          <p class="ion-padding-start">Rentrer une ville correct.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Pays</ion-label>
+          <ion-input required type="text" formControlName="country"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.country.valid && ionicForm.controls.country.dirty">
+          <p class="ion-padding-start">Rentrer une pays correct.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input required type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.email.valid && ionicForm.controls.email.dirty">
+          <p class="ion-padding-start">Rentrer un email correct.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-top">
+        <ion-item>
+          <ion-label>Role</ion-label>
+          <ion-select value="ionicForm.role_id" formControlName="role_id">
+            <ion-select-option *ngFor="let role of roles; let i=index" [value]="role.id">
+              {{role.role}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.role_id.valid && ionicForm.controls.role_id.dirty">
+          <p class="ion-padding-start">{{ionicForm.controls.errors}}.</p>
+        </ion-note>
+      </ion-list>
+      <br />
+
+    </form>
+    <ion-button [disabled]="ionicForm.invalid" (click)="udpate()" expand="block">Modifier</ion-button>
+  </div>
+
+<br/>
+
+</ion-content>

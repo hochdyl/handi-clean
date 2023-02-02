@@ -1,0 +1,107 @@
+@import '/src/theme/variables.scss';
+
+ion-content{
+    --ion-background-color:$color-primary !important;
+    background:$color-primary-background ;
+
+ }
+.container-home {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+}
+ .container-flex {
+    margin-top : 73%;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 55%;
+    align-items: center;
+    bottom: 0;
+
+    .round {
+        height:70px;
+        width: 70px;
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 5.5em;
+        margin: 15px;
+        .icon {
+            font-size : 25px;
+        }
+    }
+    
+    .round-space-parents{
+        display:flex;
+        justify-content: flex-end;
+        width : 100%;
+        padding-right: 10px;
+
+        .round {
+            margin-right: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+    .container-flex-children {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .round-child {
+            line-height: 2.5em;
+            p {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px)
+{
+    .container-flex {
+        height: 55%;
+    
+        .round {
+            height:150px;
+            width: 150px;
+            text-align: center;
+            line-height: 5.5em;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .icon {
+                font-size : 64px;
+            }
+        }
+        
+        .round-space-parents{
+            width : 100%;
+            padding-right: 10px;
+    
+            .round {
+                margin-right: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        .container-flex-children {
+            .round-child {
+                line-height: 2.5em;
+            }
+        }
+    }
+
+    p {
+        font-size: 2em;
+    }
+
+}

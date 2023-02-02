@@ -1,0 +1,27 @@
+<ion-content [forceOverscroll]="false">
+
+  <div class="container-flex">
+    <div class="container-buttons">
+      <ion-back-button color="dark" class="icon-retour"  text="" defaultHref="/home"></ion-back-button>
+      <ion-icon class="icon-valid" (click)="exportCanvasImage()" color="success" name="checkmark-circle"></ion-icon>
+    </div>
+    <div class="container-drawing">
+      <div class="container-canvas">
+        <canvas #imageCanvas (scroll)="moved($event)" (mouseevent)="moved($event)" (mousewheel)="moved($event)"
+          (mousedown)="startDrawing($event)" (touchstart)="startDrawing($event)" (touchmove)="moved($event)"
+          (mousemove)="moved($event)" (mouseup)="endDrawing()" (touchend)="endDrawing()"></canvas>
+      </div>
+      <div class="container-colors">
+        <ion-row>
+          <ion-col *ngFor="let color of colors" [style.background]="color" class="color-block" tappable
+            (click)="selectColor(color)"></ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div class="container-pen">
+      <ion-icon color="dark" (click)="sizePen(5)" class="small" name="brush"></ion-icon>
+      <ion-icon color="dark" (click)="sizePen(15)" name="brush" class="default"></ion-icon>
+      <ion-icon color="dark" (click)="sizePen(30)" class="large" name="brush"></ion-icon>
+    </div>
+  </div>
+</ion-content>

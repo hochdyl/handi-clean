@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pictogramme</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar spellcheck="true" placeholder="Rechercher..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  <p class="ion-text-center" *ngIf="child">
+    Pictogrammes de {{child.firstname}}
+  </p>
+  <ion-list>
+    <ion-item class="ion-padding-bottom" *ngFor="let pictogram of pictograms | filter:filterTerm">
+      <ion-img class="image" slot="start" [src]="pictogram.image.image_path">
+      </ion-img>
+      <ion-label>
+        <h2>{{pictogram.name}}
+        </h2>
+        <br />
+        <div class="container-button">
+          <ion-button class="button" color="success">
+            <ion-icon name="pencil-outline"> </ion-icon>
+          </ion-button>
+          <ion-button (click)="showConfirm(pictogram)" class="button" color="danger">
+            <ion-icon name="trash-outline"> </ion-icon>
+          </ion-button>
+       </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- fab placed to the bottom start -->
+  <ion-fab (click)="scrollToTop()" class="button-scroll" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-up-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-button [routerLink]="['add-pictogram']" class="button-add" color="primary" expand="full" shape="round">
+    Ajouter un pictogramme
+  </ion-button>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-back-button color="dark" class="icon-retour" text="" defaultHref="/home"></ion-back-button>
+  <div class="container-flex">
+      <ion-card class="container-game">
+        <div class="container-current-animal">
+          <ion-img *ngIf="currentAnimal" (click)="textToSpeech(currentAnimal.name)" class="current-animal" [src]="currentAnimal.image"></ion-img>
+          <h2 class="ion-text-center" *ngIf="currentAnimal">
+            {{currentAnimal.name}}
+            <ion-icon (click)="textToSpeech(currentAnimal.name)" class="icon" size="large" name="volume-high-outline"></ion-icon>
+          </h2>
+          <h2 class="ion-text-center" *ngIf="!currentAnimal">
+            Choisi un animal !
+            <ion-icon (click)="textToSpeech()" class="icon" size="large" name="volume-high-outline"></ion-icon>
+          </h2>
+        </div>
+
+          <div class="container-animals" >
+              <ion-img  *ngFor="let animal of animals; let i=index" (click)="chooseAnimal(i)" class="animal" [src]="animal.image"></ion-img>
+          </div>
+      </ion-card>
+    </div>
+
+</ion-content>

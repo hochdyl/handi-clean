@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+  <ion-img class="image-home-slide" [src]="logo"></ion-img>
+
+  <div class="container-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center" color="primary">Bienvenue !</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Bienvenue à vous dans cette application !
+        <br /><br />
+        Vous allez suivre un petit tuto explicatif pour vous faire découvrir l'application
+        <br />
+        (C'est rapide ne vous en faites pas !)
+        <br /> <br />
+        <span class="ion-text-center">Bonne lecture !</span>
+      </ion-card-content>
+    </ion-card>
+    <div class="container-icon">
+      <ion-icon color="primary" [routerLink]="['/tab2']" slot='end' name="chevron-forward-outline" size="large">
+      </ion-icon>
+    </div>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,20 @@
+.container-drawing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .drawing {
+        width: 200px;
+    } 
+}
+.button-delete{
+    position : absolute;
+    left: 98%;
+    transform: translateX(-100%);
+    z-index: 10;
+    width: 45px;
+    height: 35px;
+} 
+
+    
+
+

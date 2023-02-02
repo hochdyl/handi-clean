@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Statistiques</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p class="ion-text-center" *ngIf="child">
+  Vous pouvez retrouver les différents jeux de {{child.firstname}}, et en cliquant sur un jeu pour avoir ses statistiques !
+</p>
+<div class="container-flex ion-padding-bottom">
+  <ion-card [routerLink]="[game.id, 'statistics']" *ngFor="let game of games">
+    <p>{{game.name}}</p>
+  </ion-card>
+</div>
+</ion-content>

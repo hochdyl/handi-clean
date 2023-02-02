@@ -1,0 +1,98 @@
+<ion-content [fullscreen]="true">
+  <div class="container-game">
+    <ion-back-button color="dark" class="icon-retour" text="Retour" defaultHref="/home"></ion-back-button>
+    <h1 class="ion-text-center">
+      Appuie sur les bonnes couleurs
+      <ion-icon (click)="textToSpeech()" class="icon" name="volume-high-outline"></ion-icon>
+    </h1>
+    <div class="data">
+      <ng-container *ngFor="let key of game.data[level].keys">
+        <p class="color-red" *ngIf="key===0">
+          DO
+        </p>
+        <p class="color-orange" *ngIf="key===1">
+          RE
+        </p>
+        <p class="color-yellow" *ngIf="key===2">
+          MI
+        </p>
+        <p class="color-green" *ngIf="key===3">
+          FA
+        </p>
+        <p class="color-cyan" *ngIf="key===4">
+          SOL
+        </p>
+        <p class="color-blue" *ngIf="key===5">
+          LA
+        </p>
+        <p class="color-purple" *ngIf="key===6">
+          SI
+        </p>
+        <p class="color-pink" *ngIf="key===7">
+          DO
+        </p>
+      </ng-container>
+    </div>
+    <div>
+
+    </div>
+    <div class="container-piano">
+      <div (click)="validated(0)" class=" keys color-red">
+        <div class="round">
+          <p>
+            DO
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(1)" class=" keys color-orange">
+        <div class="round">
+          <p>
+            RE
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(2)" class=" keys color-yellow">
+        <div class="round">
+          <p>
+            MI
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(3)" class=" keys color-green">
+        <div class="round">
+          <p>
+            FA
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(4)" class=" keys color-cyan">
+        <div class="round">
+          <p>
+            SOL
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(5)" class=" keys color-blue">
+        <div class="round">
+          <p>
+            LA
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(6)" class=" keys color-purple">
+        <div class="round">
+          <p>
+            SI
+          </p>
+        </div>
+      </div>
+      <div (click)="validated(7)" class=" keys color-pink">
+        <div class="round">
+          <p>
+            DO
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

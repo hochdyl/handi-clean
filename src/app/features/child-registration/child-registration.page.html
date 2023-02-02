@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajouter un enfant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll="false" class="ion-padding">
+  <div class="container-center">
+    <h2 class="ion-text-center">Veuillez rentrer vos informations</h2>
+    <form [formGroup]="ionicForm">
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input required type="text" formControlName="firstname"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.firstname.valid && ionicForm.controls.firstname.dirty">
+          <p class="ion-padding-start">Rentrer un prénom.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input required type="text" formControlName="lastname"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.lastname.valid && ionicForm.controls.lastname.dirty">
+          <p class="ion-padding-start">Rentrer un nom.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="stacked">Date d'anniversaire</ion-label>
+          <ion-input [max]="maxDate" [value]="maxDate" required type="date" formControlName="date_of_birth"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicForm.controls.date_of_birth.valid && ionicForm.controls.date_of_birth.dirty">
+          <p class="ion-padding-start">Rentrer une date correcte.</p>
+        </ion-note>
+
+      </ion-list>
+      <br />
+    </form>
+    <ion-button [disabled]="ionicForm.invalid" (click)="addChild()" expand="block">Valider</ion-button>
+  </div>
+</ion-content>

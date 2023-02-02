@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Retour" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Capacités</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container-center">
+    <h2 class="ion-text-center">Répondez aux questions</h2>
+    <form [formGroup]="ionicForm">
+      <ion-list>
+       <ion-radio-group formControlName="alone">
+        <ion-list-header>
+          <ion-label>Va-t-il jouer seul sur l'application</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="read">
+        <ion-list-header>
+          <ion-label>Sait-il lire ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="deaf">
+        <ion-list-header>
+          <ion-label>Est-il sourd ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="know_image">
+        <ion-list-header>
+          <ion-label>Sait-il reconnaitre des images ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="know_color">
+        <ion-list-header>
+          <ion-label>Connait-il (reconnait-il) les couleurs ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="write">
+        <ion-list-header>
+          <ion-label>Sait-il écrire des mots si on lui propose des lettres ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="know_word">
+        <ion-list-header>
+          <ion-label>Comprend-t-il les mots s'il les entend ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+    </ion-list>
+    </form>
+    <ion-button [disabled]="ionicForm.invalid" (click)="addAbility()" expand="block">Valider</ion-button>
+  </div>
+</ion-content>

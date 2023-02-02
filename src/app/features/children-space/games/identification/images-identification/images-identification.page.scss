@@ -1,0 +1,101 @@
+@import "/src/theme/variables.scss";
+
+ion-content {
+    --background: $color-red;
+    background-color: $color-red;
+}
+.container-flex {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-left: 70px;
+    .container-game {
+        background-color: $color-red-light;
+        --background: $color-red-light;
+        width: 85%;
+        h1, h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            .icon {
+                padding-left: 10px;
+                font-size : 40px !important;
+            }
+        }
+        .data {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 70%;
+            h2 {
+                font-weight: bold;
+                margin-left : 25px;
+            }
+
+            .container-images {
+                display: flex;
+                justify-content: space-around;
+                padding-bottom: 5px;
+                flex-wrap: wrap;
+                height: 100%;
+                width: 80%;
+
+                .images {
+                    width: 130px;
+                }
+            }
+        }
+    }
+}
+
+.icon-retour {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.image-character {
+    width: 100px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+@media screen and (min-width: 800px)
+{
+    .icon-retour {
+        font-size: 30px;
+    }
+    
+    .image-character {
+        width: 160px;
+    }
+
+    .container-flex {
+        .container-game {
+            h1, h2 {
+                font-size: 3em;
+                .icon {
+                    font-size : 60px !important;
+                }
+            }
+            .data {
+                height: 80%;
+                h2 {
+                    font-weight: bold;
+                    margin-left : 25px;
+                    font-size: 3em;
+                }
+    
+                .container-images {
+
+                    .images {
+                        width: 350px;
+                    }
+                }
+            }
+        }
+    }
+}

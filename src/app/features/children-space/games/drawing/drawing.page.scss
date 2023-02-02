@@ -1,0 +1,88 @@
+@import '/src/theme/variables.scss';
+
+ion-content {
+    --background: $color-pink-light ;
+    background-color: $color-pink-light;
+}
+
+canvas {
+    border: 1px solid rgb(187, 178, 178);
+    background-color: white;
+  }
+   
+  .color-block {
+    height: 40px;
+  }
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    .container-canvas {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      }
+
+  .container-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    .icon-valid {
+      font-size : 65px;
+    }
+  }
+  
+  .container-pen {
+    display: flex;
+    flex-direction: column;
+    .small {
+      font-size : 32px;
+      
+    }
+    .default {
+      font-size : 45px;
+      padding-bottom : 10px;
+      padding-top : 10px;
+    }
+    .large {
+      font-size : 55px;
+      
+    }
+  }
+}
+
+
+@media screen and (min-width: 800px)
+{
+  .icon-retour {
+    font-size: 50px;
+}
+    .color-block {
+      height: 120px;
+    }
+
+    .container-flex {
+      .container-buttons {
+        .icon-valid {
+          font-size : 85px;
+        }
+      }
+      .container-colors {
+        position: fixed;
+        bottom: 0;
+        width: 88%;
+      }
+      
+      .container-pen {
+        .default {
+          padding-bottom : 50px;
+          padding-top : 50px;
+        }
+      }
+  }
+
+}

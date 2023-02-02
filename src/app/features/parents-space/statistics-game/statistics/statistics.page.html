@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{gameName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p class="ion-text-center" *ngIf="averageError">
+    Moyenne d'erreurs par niveau : {{averageError}} erreurs
+  </p>
+  <p class="ion-text-center" *ngIf="averageTime">
+    Moyenne de temps pour un niveau : {{averageTime}} secondes
+  </p>
+
+    <ion-card>
+      <ion-card-title>
+        Taux d'erreurs
+      </ion-card-title>
+      <ion-card-content>
+        <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-title>
+        Temps mis
+      </ion-card-title>
+      <ion-card-content>
+        <canvas #lineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

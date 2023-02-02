@@ -1,0 +1,24 @@
+<ion-content color="color-primary-background ">
+  <div class="container-home">
+    <div class="container-flex">
+      <div class="round" *ngIf="children?.length <= 0">
+        <ion-icon color="primary" [routerLink]="['/child-registration']" slot='end' name="person-add-outline"
+          class="icon">
+        </ion-icon>
+      </div>
+      <ng-container *ngIf="children?.length > 0">
+        <div class="container-flex-children">
+          <div [routerLink]="['/children-space', child.id]" class="round-child round" *ngFor="let child of children">
+            <p> {{child.firstname}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <div class="round-space-parents">
+        <div class="round" (longPress)="accessSpaceParents()">
+          <ion-icon color="primary" class="icon" slot='end' name="people-outline">
+          </ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

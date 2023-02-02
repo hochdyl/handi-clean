@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <div class="container-flex">
+    <div class="container-character">
+
+      <ion-icon [routerLink]="['/home']" class="icon" color="dark" name="arrow-back-outline"></ion-icon>
+      <ion-button *ngIf="!imageCharacter" [routerLink]="['characters']" color="primary" expand="block" shape="round">
+        Personnage
+      </ion-button>
+      <ion-img [routerLink]="['characters']" class="image-character" *ngIf="imageCharacter" [src]="imageCharacter"></ion-img>
+    </div>
+    <div class="container-games">
+      <div class="games">
+        <ion-card [routerLink]="['games', game.id, game.url]" class="game {{game.category_game.name}}"
+          *ngFor="let game of games">
+          <img [src]="'/assets/child-zone/' + game.url + '.png'" alt="">
+        </ion-card>
+      </div>
+    </div>
+    <div class="container-pictograms">
+        <ion-card [routerLink]="['pictograms']" class="pictogram">
+          <img src="/assets/child-zone/pictogramme.png" alt="pictogramme">
+        </ion-card>
+    </div>
+  </div>
+
+</ion-content>

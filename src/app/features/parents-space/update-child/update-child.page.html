@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Retour" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modifier un enfant</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="">
+    <h2 class="ion-text-center">Veuillez rentrer les informations</h2>
+    <form [formGroup]="ionicFormChild">
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input required type="text" formControlName="firstname"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicFormChild.controls.firstname.valid && ionicFormChild.controls.firstname.dirty">
+          <p class="ion-padding-start">Rentrer un prénom.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input required type="text" formControlName="lastname"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicFormChild.controls.lastname.valid && ionicFormChild.controls.lastname.dirty">
+          <p class="ion-padding-start">Rentrer un nom.</p>
+        </ion-note>
+      </ion-list>
+
+      <ion-list class="ion-padding-bottom">
+        <ion-item>
+          <ion-label position="stacked">Date d'anniversaire</ion-label>
+          <ion-input [max]="maxDate" [value]="maxDate" required type="date" formControlName="date_of_birth"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="!ionicFormChild.controls.date_of_birth.valid && ionicFormChild.controls.date_of_birth.dirty">
+          <p class="ion-padding-start">Rentrer une date correct.</p>
+        </ion-note>
+      </ion-list>
+      <br />
+    </form>
+    <form [formGroup]="ionicFormAbility">
+      <ion-list>
+       <ion-radio-group formControlName="alone">
+        <ion-list-header>
+          <ion-label>Va-t-il jouer seul sur l'application</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="read">
+        <ion-list-header>
+          <ion-label>Sait-il lire ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="deaf">
+        <ion-list-header>
+          <ion-label>Est-il sourd ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="know_image">
+        <ion-list-header>
+          <ion-label>Sait-il reconnaitre des images ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="know_color">
+        <ion-list-header>
+          <ion-label>Connait-il (reconnait-il) les couleurs ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group formControlName="write">
+        <ion-list-header>
+          <ion-label>Sait-il écrire des mots si on lui propose des lettres ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+      <ion-radio-group value="ionicFormAbility.know_word" formControlName="know_word">
+        <ion-list-header>
+          <ion-label>Comprend-t-il les mots s'il les entend ?</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Oui</ion-label>
+          <ion-radio slot="end" color="primary" [value]="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Non</ion-label>
+          <ion-radio slot="end" color="primary" [value]="0"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+    </ion-list>
+    </form>
+    <ion-button [disabled]="ionicFormChild.invalid && ionicFormAbility.invalid" (click)="updateChild()" expand="block">Valider</ion-button>
+  </div>
+</ion-content>

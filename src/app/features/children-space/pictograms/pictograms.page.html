@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="container-flex">
+    <ion-back-button color="dark" class="icon-retour" text="Retour" defaultHref="/home"></ion-back-button>
+    <div class="container-pictograms">
+      <ion-card class="card"(click)="textToSpeech(pictogram.name)" *ngFor="let pictogram of pictograms">
+        <ion-img class="image-pictogram" [src]="pictogram.image.image_path"></ion-img>
+        <ion-card-title class=" title ion-text-center ">{{pictogram.name}}</ion-card-title>
+      </ion-card>
+    </div>
+
+    <div class="container-category-pictograms">
+      <ion-card  class="card" (click)=" selectCategory(categoryPictogram.id)" *ngFor="let categoryPictogram of categoryPictograms">
+        <ion-img class="image-category-pictogram" [src]="categoryPictogram.image.image_path"></ion-img>
+        <ion-card-subtitle class=" title ion-text-center">{{categoryPictogram.name}}</ion-card-subtitle>
+        
+      </ion-card>
+
+    </div>
+
+  </div>
+
+</ion-content>

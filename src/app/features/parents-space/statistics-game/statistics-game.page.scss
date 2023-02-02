@@ -1,0 +1,32 @@
+@import '/src/theme/variables.scss';
+
+.container-flex {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+    ion-card {
+        width: 60%;
+        background-color:$color-primary;
+        color:white;
+        display: flex;
+        align-items: center;
+        padding:10px;
+    }
+}
+
+@media screen and (min-width: 600px)
+{  
+    .container-flex {
+        height: 90%;
+        flex-wrap: wrap;
+        ion-card {
+            width: 40%;
+        }
+    }
+    p {
+        font-size: 2em;
+    }
+}
+
+
